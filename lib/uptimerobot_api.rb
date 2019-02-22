@@ -3,7 +3,6 @@
 require 'faraday'
 require 'faraday_middleware'
 require 'json'
-require 'pry'
 
 # Uptimerobot API
 module UptimerobotApi; end
