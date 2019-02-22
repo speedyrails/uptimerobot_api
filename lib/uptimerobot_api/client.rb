@@ -31,7 +31,7 @@ module UptimerobotApi
     def validate_response(res)
       return if res['stat'] == 'ok'
 
-      raise Error.new(res), 'Invalid response'
+      raise Error.new(res), "Invalid response: #{res}"
     end
   end
 end
