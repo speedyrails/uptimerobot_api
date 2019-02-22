@@ -1,3 +1,8 @@
+[![CircleCI](https://circleci.com/gh/speedyrails/uptimerobot_api.svg?style=svg)](https://circleci.com/gh/speedyrails/uptimerobot_api)
+
+[![codecov](https://codecov.io/gh/speedyrails/uptimerobot_api/branch/master/graph/badge.svg)](https://codecov.io/gh/speedyrails/uptimerobot_api)
+
+
 # Uptimerobot Api
 
 ## Installation
