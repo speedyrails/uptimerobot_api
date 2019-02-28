@@ -3,9 +3,9 @@
 module UptimerobotApi
   # Uptimerobot client
   class Client
-    METHODS.each do |method|
+    METHODS.each do |method, endpoint|
       define_method(method) do |arg|
-        request(method, arg || {})
+        request(endpoint, arg || {})
       end
     end
 
@@ -18,10 +18,10 @@ module UptimerobotApi
 
     private
 
-    def request(method, params = {})
+    def request(endpoint, params = {})
       params[:api_key] = @options[:api_key]
       params[:format] = 'json'
-      response = @api.post(method.to_s, params)
+      response = @api.post(endpoint, params)
 
       res = response.body
       validate_response(res)

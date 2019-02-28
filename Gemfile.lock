@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    uptimerobot_api (0.1.0)
+    uptimerobot_api (0.2.0)
       faraday (~> 0.15)
       faraday_middleware (~> 0.13)
 

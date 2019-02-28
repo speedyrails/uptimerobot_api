@@ -28,7 +28,7 @@ module UptimerobotApi
     end
 
     def test_it_has_methods
-      METHODS.each do |method|
+      METHODS.each do |method, _|
         assert @client.methods.include?(method)
       end
     end
@@ -36,9 +36,9 @@ module UptimerobotApi
     def test_it_makes_a_request
       body = { 'stat' => 'ok' }
 
-      METHODS.each do |method|
-        stub_api_request(method.to_s, body.to_json)
-        res = @client.send(method, monitors: 123_456_789)
+      METHODS.each do |method, endpoint|
+        stub_api_request(endpoint, body.to_json)
+        res = @client.send(method, {})
         assert_equal res, body
       end
     end
@@ -54,8 +54,8 @@ module UptimerobotApi
       end
     end
 
-    def stub_api_request(method, body)
-      stub_request(:post, "https://api.uptimerobot.com/v2/#{method}")
+    def stub_api_request(endpoint, body)
+      stub_request(:post, "https://api.uptimerobot.com/v2/#{endpoint}")
         .to_return(body: body, headers: { 'Content-Type' => 'application/json' })
     end
   end
