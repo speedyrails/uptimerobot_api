@@ -25,7 +25,7 @@ Or install it yourself as:
 
 ```ruby
 client = UptimerobotApi::Client.new(api_key: 'your_api_key')
-client.getMonitors(monitor: 123456789)
+client.get_monitors(monitor: 123456789)
 ```
 
 ## Development
